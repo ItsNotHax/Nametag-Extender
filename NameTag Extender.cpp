@@ -19,7 +19,8 @@ std::vector<DWORD> opanamelist;
 std::vector<DWORD> reachlistdblr;
 std::vector<DWORD> espnamelist;
 
-void scan() {
+void scan() 
+{
     while (1)
     {
         if (espenabled)
