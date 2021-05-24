@@ -1,6 +1,10 @@
+/*
+* Credits to Saxony for coding this shitty nametag extender "ESP" LOL
+* Learn how to dox <3
+*/
 
-#include <iostream>
 #include <windows.h>
+#include <iostream>
 #include <vector>
 #include <tchar.h>
 
@@ -19,7 +23,7 @@ std::vector<DWORD> opanamelist;
 std::vector<DWORD> reachlistdblr;
 std::vector<DWORD> espnamelist;
 
-void scan() 
+void scan()
 {
     while (1)
     {
@@ -36,12 +40,12 @@ void scan()
             /* Keep in mind you need to make sure stack is big enough or allocate it on heap. */
 
             char buffer1[CHUNK_SIZE1];
-            for (unsigned i = 0; i < MAX_ADDRESS1; i += CHUNK_SIZE1) 
-			{
-                if (ReadProcessMemory(pHandle, (LPVOID)i, buffer1, sizeof(buffer1), nullptr)) 
-				{
-                    for (int j = 0; j <= CHUNK_SIZE1 - sizeof(int); ++j) 
-					{
+            for (unsigned i = 0; i < MAX_ADDRESS1; i += CHUNK_SIZE1)
+            {
+                if (ReadProcessMemory(pHandle, (LPVOID)i, buffer1, sizeof(buffer1), nullptr))
+                {
+                    for (int j = 0; j <= CHUNK_SIZE1 - sizeof(int); ++j)
+                    {
                         int address = i + j;
                         int address2 = i + j;
                         int address3 = i + j;
@@ -206,7 +210,7 @@ void write()
     }
 }
 
-int main() 
+int main()
 {
 
     CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)&scan, NULL, 0, 0);
@@ -221,4 +225,3 @@ int main()
 
     return 0;
 }
-
