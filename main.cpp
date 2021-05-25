@@ -4,11 +4,8 @@
  */
 
 #include <windows.h>
-
 #include <iostream>
-
 #include <vector>
-
 #include <tchar.h>
 
 HANDLE pHandle = NULL;
